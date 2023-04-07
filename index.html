@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Twivid</title>
+
+	<meta name="description" content="Smart downloader for Twitter hosted videos" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="assets/favicon.png" />
+
+	<meta property="og:title" content="Twivid" />
+	<meta property="og:description" content="Smart downloader for Twitter hosted videos" />
+	<meta property="og:image" content="assets/og-image.png" />
+
+	<link rel="stylesheet" href="assets/tobi.css" />
+	<link rel="stylesheet" href="assets/style.css" />
+
+</head>
+	<body>
+		<a href="https://www.producthunt.com/posts/twivid?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-twivid" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=320160&theme=dark" alt="Twivid - Smart downloader for Twitter hosted videos | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+		<main>
+<header class="app__header container">
+	<div class="app__logo-wrapper"> <img class="app__logo" src="content/image/icon.png" alt="Twivid"></div>
+	<div class="app__infos">
+		<h1 class="app__name">Twivid</h1>
+		<p class="app__description">Smart downloader for Twitter hosted videos</p>
+		<div class="app__buttons app__buttons--desktop">
+			<a href="https://play.google.com/store/apps/details?id=com.elmoiv.twivid.videodownloaderfortwitter.twitter" class="app__button-play" target="_blank" title="Get on Google Play">
+				<img src="assets/google-play-badge.png" alt="Get on Google Play">
+			</a>
+		</div>
+	</div>
+</header>
+<div class="app__buttons app__buttons--mobile container">
+	<a href="https://play.google.com/store/apps/details?id=com.elmoiv.twivid.videodownloaderfortwitter.twitter" class="app__button-play" target="_blank" title="Get on Google Play">
+		<img src="assets/google-play-badge.png" alt="Get on Google Play">
+	</a>
+</div>
+<section class="app__screenshots app__section">
+	<div class="container">
+		<h2 class="app__section-title">Screenshots</h2>
+	</div>
+	<div class="app__screenshots-wrapper container-desktop">
+		<div class="app__screenshots-list">
+			<a href="content/image/s1.png" class="lightbox">
+				<img src="content/image/s1.png" class="app__screenshot" alt="" />
+			</a>
+			<a href="content/image/s2.png" class="lightbox">
+				<img src="content/image/s2.png" class="app__screenshot" alt="" />
+			</a>
+			<a href="content/image/s3.png" class="lightbox">
+				<img src="content/image/s3.png" class="app__screenshot" alt="" />
+			</a>
+			<a href="content/image/s4.png" class="lightbox">
+				<img src="content/image/s4.png" class="app__screenshot" alt="" />
+			</a>
+			<a href="content/image/s5.png" class="lightbox">
+				<img src="content/image/s5.png" class="app__screenshot" alt="" />
+			</a>
+		</div>
+	</div>
+</section>
+<section class="app__fulldescription app__section container">
+	<h2 class="app__section-title">Description</h2>
+	<div class="app__fulldescription-content">
+		<p>Twivid is a smart video-downloader for Twitter.</p>
+<p><b>Features:</b></p>
+<ul>
+<li>Download Videos with sound.</li>
+<li>Select from different qualities. (from 240p to 1080p)</li>
+<li>Share downloaded videos to different apps.</li>
+<li>Play videos within the app.</li>
+<li>Powerful options to select from.</li>
+</ul>
+<p><b>How to use:</b></p>
+<ul>
+<li>Click on share button while viewing your Twitter video.</li>
+</ul>
+<p><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Or:</i></b></p>
+<ul>
+<li>Copy Twitter video URL and paste it in Twivid.</li>
+</ul>
+
+	</div>
+</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__container">
+					<p class="footer__love">
+						<script>document.write('&copy;' + (new Date()).getFullYear());</script><noscript>&copy;2021</noscript> All rights reserved
+							&mdash; Template by <a href="https://www.sandoche.com" target="_blank">Sandoche</a>
+							&mdash; Powered by <a href="https://t3mpl.n4no.com/" target="_blank" title="T3MPL Editor">T3MPL</a>
+					</p>
+					<ul class="footer__links">
+							<li class="footer__link">
+								<a href="privacy-policy.html">Privacy Policy</a>
+							</li>
+							<li class="footer__link">
+								<a href="terms-of-use.html">Terms of Use</a>
+							</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="assets/tobi.min.js" /></script>
+		<script>
+			window.onload = function () {
+				var tobi = new Tobi();
+			};
+			
+			const slider = document.querySelector('.app__screenshots-list');
+			let mouseDown = false;
+			let startX, scrollLeft;
+
+			let startDragging = function (e) {
+			mouseDown = true;
+			startX = e.pageX - slider.offsetLeft;
+			scrollLeft = slider.scrollLeft;
+			};
+			let stopDragging = function (event) {
+			mouseDown = false;
+			};
+
+			slider.addEventListener('mousemove', (e) => {
+			e.preventDefault();
+			if(!mouseDown) { return; }
+			const x = e.pageX - slider.offsetLeft;
+			const scroll = x - startX;
+			slider.scrollLeft = scrollLeft - scroll;
+			});
+
+			// Add the event listeners
+			slider.addEventListener('mousedown', startDragging, false);
+			slider.addEventListener('mouseup', stopDragging, false);
+			slider.addEventListener('mouseleave', stopDragging, false);
+		</script>
+
+  </body>
+</html>
